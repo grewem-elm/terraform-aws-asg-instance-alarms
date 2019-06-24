@@ -10,8 +10,7 @@ module "lambda" {
 
   source_path = "${path.module}/lambda.py"
 
-  attach_policy = true
-  policy        = "${data.aws_iam_policy_document.lambda.json}"
+  policy        = data.aws_iam_policy_document.lambda.json
 
   environment {
     variables {
