@@ -1,5 +1,5 @@
 module "lambda" {
-  source = "github.com/claranet/terraform-aws-lambda?ref=v1.0.0"
+  source = "github.com/claranet/terraform-aws-lambda?ref=v1.4.0"
 
   function_name = var.name
   description   = "Manages ASG instance alarms"
@@ -10,7 +10,7 @@ module "lambda" {
 
   source_path = "${path.module}/lambda.py"
 
-  policy        = data.aws_iam_policy_document.lambda.json
+  policy = data.aws_iam_policy_document.lambda.json
 
   environment = {
     variables = {
